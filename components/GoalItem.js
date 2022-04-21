@@ -1,11 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
 const GoalItem = (props) => {
-    return (
+  return (
+    <Pressable onPress={props.onDeleteItem}>
       <View style={styles.goalItem}>
         <Text style={styles.goalText}>{props.text}</Text>
       </View>
-    );
+    </Pressable>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -20,6 +22,5 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
-
 
 export default GoalItem;
